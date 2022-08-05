@@ -1,0 +1,7 @@
+Dog
+Cat
+Bird
+Fish
+
+Dog:
+5
