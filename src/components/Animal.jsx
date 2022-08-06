@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Character from "./Character"
 
 function IndividualDiet({ diet }) {
     return (
@@ -32,7 +33,7 @@ function IndividualAnimal({ name, diet, characteristics, best, notbest, image}) 
                     {
                         characteristics.map((item) => {
                             return(
-                            <IndividualDiet diet={item}></IndividualDiet>
+                            <Character text={item}></Character>
                             )
                         })
                     }
@@ -51,10 +52,10 @@ function IndividualAnimal({ name, diet, characteristics, best, notbest, image}) 
 }
 //continue here
 export default function Animal() {
-    const dogAPI = 'http://localhost:3001/getdog/'
-    const catAPI = 'http://localhost:3001/getcat'
-    const fishAPI = 'http://localhost:3001/getfish'
-    const birdAPI = 'http://localhost:3001/getbird'
+    const dogAPI = 'http://20.193.229.122/getdog/'
+    const catAPI = 'http://20.193.229.122/getcat'
+    const fishAPI = 'http://20.193.229.122/getfish'
+    const birdAPI = 'http://20.193.229.122/getbird'
     
     const [name, setName] = useState("");
     const [best, setBest] = useState("");
