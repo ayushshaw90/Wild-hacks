@@ -2,7 +2,7 @@ import { useState } from "react"
 
 function IndividualDiet({ diet }) {
     return (
-        <li>{diet}</li>
+        <li className="py-1">{diet}</li>
     )
 }
 
@@ -16,7 +16,7 @@ function IndividualAnimal({ name, diet, characteristics, best, notbest, image}) 
             <img src={`images/${fname}`} alt="" className="w-80 mx-auto rounded-md" />
             {/* food habits */}
             <div>
-                <h1 className="text-2xl font-semibold text-cyan-700">Food habits</h1>
+                <h1 className="text-2xl font-semibold text-cyan-700 py-4">Food habits</h1>
                 <ul>
                     {/* use higher order function to iterate through loop */}
                     {
@@ -27,21 +27,23 @@ function IndividualAnimal({ name, diet, characteristics, best, notbest, image}) 
                 </ul>
             </div>
             <div>
-                <h1 className="text-2xl font-semibold text-cyan-700">Characteristics</h1>
+                <h1 className="text-2xl font-semibold text-cyan-700 py-4">Characteristics</h1>
                 <ul>
                     {
                         characteristics.map((item) => {
+                            return(
                             <IndividualDiet diet={item}></IndividualDiet>
+                            )
                         })
                     }
                 </ul>
             </div>
             <div>
-                <h1 className="text-2xl font-semibold text-cyan-700">What is best for your pet</h1>
+                <h1 className="text-2xl font-semibold text-cyan-700 py-4">What is best for your pet</h1>
                 <p>{best}</p>
             </div>
             <div>
-                <h1 className="text-2xl font-semibold text-cyan-700">What is not good for your pet</h1>
+                <h1 className="text-2xl font-semibold text-cyan-700 py-4">What is not good for your pet</h1>
                 <p>{notbest}</p>
             </div>
         </div>
@@ -49,25 +51,14 @@ function IndividualAnimal({ name, diet, characteristics, best, notbest, image}) 
 }
 //continue here
 export default function Animal() {
-    let animalComponent;
     const dogAPI = 'http://localhost:3001/getdog/'
     const catAPI = 'http://localhost:3001/getcat'
     const fishAPI = 'http://localhost:3001/getfish'
     const birdAPI = 'http://localhost:3001/getbird'
-    const [dataobj, setdataobj] = useState({
-        found: 'false',
-        name: '',
-        best: '',
-        characteristics: [],
-        diet: [],
-        image: '',
-        notBest: ''
-    })
+    
     const [name, setName] = useState("");
     const [best, setBest] = useState("");
-    const [characteristics, setCharacteristics] = useState(
-        []
-    );
+    const [characteristics, setCharacteristics] = useState([]);
     const [diet, setDiet] = useState( [] );
     const [image, setimage] = useState("");
     const [notBest, setNotBest] = useState("");
@@ -99,13 +90,13 @@ export default function Animal() {
         responce.json().then(dataob=>{
             let data = dataob.responce[0];
             console.log("json", data);
+            setCharacteristics(data.characteristics);
             setName(data.name);
             setBest(data.best);
             setNotBest(data.notBest);
-            setCharacteristics(data.characteristics);
+            console.log("characteristics", data.characteristics.join('#'))
             setDiet(data.diet);
             setimage(data.image);
-            console.log("dataobj",dataobj)
             setSearched(true);
             //printing
             console.log("name", name);
@@ -119,7 +110,6 @@ export default function Animal() {
 
     }
     
-    let contentFetched = "";
     return (
         <div>
             <h1 className="text-center text-2xl font-bold text-gray-800 pb-4">Select your animal</h1>
@@ -127,22 +117,30 @@ export default function Animal() {
                 <h1 className="text-2xl font-semibold px-2 py-2">Dog</h1>
                 <ul>
                     <li>
-                        <button className="animal-list" onClick={()=>{
-                            fetchPost('Labrador Retriever', 'dog').then(()=>1)
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Labrador Retriever', 'dog')
                         }}>
                             Labrador Retriever
                         </button>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Doberman', 'dog')
+                        }}>
                             Doberman
                         </button>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Beagle', 'dog')
+                        }}>
                             Beagle
                         </button>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Pug', 'dog')
+                        }}>
                             Pug
                         </button>
-                        <button className="animal-list">
-                            Rottweiter
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Rottweiler', 'dog')
+                        }}>
+                            Rottweiler
                         </button>
                     </li>
                 </ul>
@@ -151,20 +149,30 @@ export default function Animal() {
                 <h1 className="text-2xl font-semibold px-2 py-2">Cat</h1>
                 <ul>
                     <li>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Exotic Shorthair Cats', 'cat')
+                        }}>
                             Exotic Shorthair Cats
                         </button>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Ragdoll Cats', 'cat')
+                        }}>
                             Ragdoll Cats
                         </button>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('British Shorthair', 'cat')
+                        }}>
                             British Shorthair
                         </button>
-                        <button className="animal-list">
-                            Pug
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Persian Cats', 'cat')
+                        }}>
+                            Persian Cats
                         </button>
-                        <button className="animal-list">
-                            Rottweiter
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Maine Coon Cats', 'cat')
+                        }}>
+                            Maine Coon Cats
                         </button>
                     </li>
                 </ul>
@@ -173,20 +181,20 @@ export default function Animal() {
                 <h1 className="text-2xl font-semibold px-2 py-2">Fish</h1>
                 <ul>
                     <li>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Betta', 'fish')
+                        }}>
                             Betta
                         </button>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Goldfish', 'fish')
+                        }}>
                             Goldfish
                         </button>
-                        <button className="animal-list">
-                            British Shorthair
-                        </button>
-                        <button className="animal-list">
-                            Pug
-                        </button>
-                        <button className="animal-list">
-                            Rottweiter
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Guppies', 'fish')
+                        }}>
+                            Guppies
                         </button>
                     </li>
                 </ul>
@@ -195,20 +203,20 @@ export default function Animal() {
                 <h1 className="text-2xl font-semibold px-2 py-2">Bird</h1>
                 <ul>
                     <li>
-                        <button className="animal-list">
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Budgerigar', 'bird')
+                        }}>
                             Budgerigar
                         </button>
-                        <button className="animal-list">
-                            Cockateil
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Cockatiel', 'bird')
+                        }}>
+                            Cockatiel
                         </button>
-                        <button className="animal-list">
-                            British Shorthair
-                        </button>
-                        <button className="animal-list">
-                            Pug
-                        </button>
-                        <button className="animal-list">
-                            Rottweiter
+                        <button className="animal-list" onClick={async ()=>{
+                            await fetchPost('Canary', 'bird')
+                        }}>
+                            Canary
                         </button>
                     </li>
                 </ul>
@@ -230,10 +238,7 @@ export default function Animal() {
                 <button className="bg-green-500 hover:bg-green-600 active:bg-lime-500 text-white px-2 py-1 rounded-md my-auto">Search</button>
             </form> */}
             <div>
-                {/* DisplayAnimal  */}
-                {/* use api to fetch image url */}
-                {/* use api to fetch data  */}
-                {searched ? <IndividualAnimal name={name} characteristics = {characteristics} best = {best} notbest = {notBest} diet = {diet}image = {image}></IndividualAnimal> : <p></p>}
+                {searched ? (<IndividualAnimal name={name} characteristics = {characteristics} best = {best} notbest = {notBest} diet = {diet} image = {image}></IndividualAnimal>) : <p></p>}
             </div>
         </div>
     )
