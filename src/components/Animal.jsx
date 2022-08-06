@@ -55,7 +55,7 @@ export default function Animal() {
     const dogAPI = 'https://wildhacks-api.herokuapp.com/getdog/'
     const catAPI = 'https://wildhacks-api.herokuapp.com/getcat'
     const fishAPI = 'https://wildhacks-api.herokuapp.com/getfish'
-    const birdAPI = 'https://wildhacks-api.herokuapp.com//getbird'
+    const birdAPI = 'https://wildhacks-api.herokuapp.com/getbird'
     
     const [name, setName] = useState("");
     const [best, setBest] = useState("");
