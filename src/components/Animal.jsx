@@ -52,10 +52,10 @@ function IndividualAnimal({ name, diet, characteristics, best, notbest, image}) 
 }
 //continue here
 export default function Animal() {
-    const dogAPI = 'http://20.193.229.122/getdog/'
-    const catAPI = 'http://20.193.229.122/getcat'
-    const fishAPI = 'http://20.193.229.122/getfish'
-    const birdAPI = 'http://20.193.229.122/getbird'
+    const dogAPI = 'https://wildhacks-api.herokuapp.com/getdog/'
+    const catAPI = 'https://wildhacks-api.herokuapp.com/getcat'
+    const fishAPI = 'https://wildhacks-api.herokuapp.com/getfish'
+    const birdAPI = 'https://wildhacks-api.herokuapp.com//getbird'
     
     const [name, setName] = useState("");
     const [best, setBest] = useState("");
