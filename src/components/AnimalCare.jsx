@@ -17,8 +17,8 @@ function Caretaker(){
 export default function AnimalCare(){
     return(
         <div>
-            <h1 className="text-center text-2xl font-bold text-gray-200 py-2 bg-gradient-to-tr from-rose-500 to-rose-600 rounded-md">Search animal care</h1>
-            <form className="flex justify-around py-4">
+            <h1 className="text-center text-2xl font-bold text-gray-200 py-2 bg-gradient-to-tr from-rose-500 to-rose-600 rounded-md mb-2">Search animal care</h1>
+            {/* <form className="flex justify-around py-4">
                 <div className="my-auto">
                     <label htmlFor="animal" className="text-lg px-2 text-slate-600">Select Animal</label>
                     <select name="animal" id="animal" className="rounded py-1 bg-zinc-100 px-2">
@@ -33,7 +33,7 @@ export default function AnimalCare(){
                     </select>
                 </div>
                 <button className="bg-green-500 hover:bg-green-600 active:bg-lime-500 text-white px-2 py-1 rounded-md my-auto">Search</button>
-            </form>
+            </form> */}
             <Caretaker></Caretaker>
         </div>
     )
