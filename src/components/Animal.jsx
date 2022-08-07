@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Character from "./Character"
+import Loading from "./Loading"
 
 function IndividualDiet({ diet }) {
     return (
@@ -56,7 +57,8 @@ export default function Animal() {
     const catAPI = 'https://wildhacks-api.herokuapp.com/getcat'
     const fishAPI = 'https://wildhacks-api.herokuapp.com/getfish'
     const birdAPI = 'https://wildhacks-api.herokuapp.com/getbird'
-    
+
+    const [load, setLoad] = useState(false)
     const [name, setName] = useState("");
     const [best, setBest] = useState("");
     const [characteristics, setCharacteristics] = useState([]);
@@ -77,6 +79,7 @@ export default function Animal() {
         } else if (type === 'fish') {
             api = fishAPI
         }
+        setLoad(true)
         const responce = await fetch(api, {
             method: "POST",
             headers: {
@@ -106,7 +109,7 @@ export default function Animal() {
             console.log("charcteristics", characteristics);
             console.log("diet", diet)
             console.log("image", image)
-            
+            setLoad(false)
         })
 
     }
@@ -239,6 +242,7 @@ export default function Animal() {
                 <button className="bg-green-500 hover:bg-green-600 active:bg-lime-500 text-white px-2 py-1 rounded-md my-auto">Search</button>
             </form> */}
             <div>
+                {load ? (<Loading></Loading>): ""}
                 {searched ? (<IndividualAnimal name={name} characteristics = {characteristics} best = {best} notbest = {notBest} diet = {diet} image = {image}></IndividualAnimal>) : <p></p>}
             </div>
         </div>

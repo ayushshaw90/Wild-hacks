@@ -1,16 +1,19 @@
 function Caretaker(){
     return(
         <div>
-            <img src="images/doctor1.webp" alt="" className="w-80 mx-auto rounded-md" />
+            <img src="images/Grooming-service.png" alt="" className="w-full  mx-auto rounded-md" />
             <div className="pt-4">
+                
                 <ul className="bg-gradient-to-r from-teal-500 to-sky-500 p-2 text-gray-100 rounded-lg text-xl font-semibold">
-                    <li className="py-2">Name: <span>Ayush Shaw</span></li>
-                    <li className="py-2">Speaciality: <span>Cat</span></li>
+                <h1 className="text-3xl pb-4 text-center">Get grooming services for pets</h1>
+                    <li className="py-2">Email: <span>groomingservice@dogecare.com</span></li>
+                    <li className="py-2">Customer service number: <span>+915806321075</span></li>
                     <li className="py-2">Country: <span>India</span></li>
                     <li className="py-2">Charge: <span>$12/hr</span></li>
-                    
+                    <h3 className="text-lg py-4">- Contact us to get grooming services for your pet</h3>
                 </ul>
             </div>
+            <img src="images/reviews.png" alt="" className="w-full  mx-auto rounded-md my-2" />
         </div>
     )
 }
