@@ -1,18 +1,17 @@
 function IndividualDoctor(){
     return(
         <div>
-            <img src="images/doctor1.webp" alt="" className="w-80 mx-auto rounded-lg" />
-            <div className="pt-4">
-                {/* Details of doctor  */}
+            <img src="images/dr.png" alt="" className="w-80 mx-auto rounded-lg" />
+            {/* <div className="pt-4">
                 <ul className="text-xl p-2 rounded-lg bg-gradient-to-r from-teal-500 to-sky-500 text-gray-200 font-semibold">
-                    <li className="py-2">Name: <span>Dr. Ankit Kiran</span></li>
+                    <li className="py-2">Name: <span>Dr. Ankit</span></li>
                     <li className="py-2">Type: <span>Veternary doctor</span></li>
                     <li className="py-2">Experience: <span>6 years</span></li>
                     <li className="py-2">Phone: <span><a href="tel:+916625487632">+916625487632</a></span></li>
                     <li className="py-2">Email: <span><a href="mailto:ayushshaw@gmail.com">ankit@dogecare.com</a></span></li>
                     
                 </ul>
-            </div>
+            </div>  */}
         </div>
     )
 }
