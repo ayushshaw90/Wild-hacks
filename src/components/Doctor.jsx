@@ -5,11 +5,11 @@ function IndividualDoctor(){
             <div className="pt-4">
                 {/* Details of doctor  */}
                 <ul className="text-xl p-2 rounded-lg bg-gradient-to-r from-teal-500 to-sky-500 text-gray-200 font-semibold">
-                    <li className="py-2">Name: <span>Ayush Shaw</span></li>
+                    <li className="py-2">Name: <span>Dr. Ankit Kiran</span></li>
                     <li className="py-2">Type: <span>Veternary doctor</span></li>
                     <li className="py-2">Experience: <span>6 years</span></li>
                     <li className="py-2">Phone: <span><a href="tel:+916625487632">+916625487632</a></span></li>
-                    <li className="py-2">Email: <span><a href="mailto:ayushshaw@gmail.com">ayushshaw@gmail.com</a></span></li>
+                    <li className="py-2">Email: <span><a href="mailto:ayushshaw@gmail.com">ankit@dogecare.com</a></span></li>
                     
                 </ul>
             </div>
