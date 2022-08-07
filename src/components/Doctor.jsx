@@ -18,7 +18,7 @@ function IndividualDoctor(){
 function Doctor(){
     return(
         <div>
-            <h1 className="text-center text-2xl font-bold text-gray-200 py-2 bg-gradient-to-r from-red-500 to-rose-600 rounded-md mb-2">View our doctors</h1>
+            <h1 className="text-center text-2xl font-bold text-gray-200 py-2 bg-gradient-to-r from-red-500 to-rose-600 rounded-md mb-2">View our DogeBuddy</h1>
             {/* <form className="flex justify-around py-4">
                 <div className="my-auto">
                     <label htmlFor="animal" className="text-lg px-2 text-slate-600">Select Animal</label>
