@@ -2,11 +2,10 @@
 
 Front-end application made for MLH wildhacks hackathon.
 
-##To deploy the site
+<h2>To deploy the site</h2>
 Simply connect the repository on netlify
+<h2>To try the front end locally</h2>
 
-##To try the front end locally
-<br>
 Clone the repository,head over to folder and open terminal inside the folder. Execute the commands: 
 <br>
 npm install vite@latest
